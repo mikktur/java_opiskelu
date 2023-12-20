@@ -17,8 +17,8 @@ public class SumOfThreeNumbers {
         System.out.println("The sum of the numbers is " + (first + second + third));
         System.out.println("The product of the numbers is " + (first * second * third));
         /* I had to change the print output to double, as averages are typically expressed as
-         floating-point numbers. In this case, it was rounded to the closest whole number as integer, resulting in 3 instead of 4.333333333333333.
-         and float was not accurate enough, so it needed to be a double.
+         floating-point numbers. Integers lose the remainders so the number would have been 3 instead of 4.333333333333333.
+         And float was not accurate enough, so it needed to be a double.
           Also, i limited decimals, so it should be exactly the same number now.
          */
         System.out.printf("The average of the numbers is %.13f%n", ((double)(first + second + third) / 3));
