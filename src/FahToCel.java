@@ -6,6 +6,6 @@ public class FahToCel {
         System.out.print("Input degrees in fahrenheit");
         double fah = Double.parseDouble(scanner.nextLine());
         double cel = (fah-32)*5/9;
-        System.out.printf("%.2f Fahrenheit in Celsius is: %.2f%n", fah, cel);
+        System.out.printf("%.1f Fahrenheit in Celsius is: %.1f%n", fah, cel);
     }
 }
