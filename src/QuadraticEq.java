@@ -12,26 +12,17 @@ public class QuadraticEq {
         double discriminant = Math.pow(b, 2) - 4 * a * c;
         double root;
         double root2;
-        if (a == 0) {
-            if (b != 0) {
-                root = -c / b;
-                System.out.printf("The root is: %.2f%n", root);
-            } else if (c == 0) {
-                System.out.println("Infinite solutions every real number is a solution.");
-            } else {
-                System.out.println("No solution.");
-            }
-        } else if (discriminant < 0) {
+        if (discriminant < 0) {
             System.out.print("No real roots");
 
         } else if (discriminant > 0) {
             root = (-b + Math.sqrt(discriminant)) / (2 * a);
             root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            System.out.printf("The roots are : %.2f and %.2f", root, root2);
+            System.out.printf("The roots are : %.2f and %.2f",root,root2);
 
         } else {
             root = -b / (2 * a);
-            System.out.printf("The root is : %.2f", root);
+            System.out.printf("The root is : %.2f",root);
 
         }
         //b+-sqrt(b^2-4*a*c)/2a//
