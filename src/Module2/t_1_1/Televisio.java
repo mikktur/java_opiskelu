@@ -1,4 +1,4 @@
-package T_2_1_4;
+package Module2.t_1_1;
 
 public class Televisio {
     private int currChannel;
