@@ -1,11 +1,28 @@
 package Module2.t_1_1;
 
 public class TelevisionViewer {
-    public static void main(String[]args){
-        Televisio televisio = new Televisio();
-        for (int i = 0;i<10;i++) {
-            televisio.watch();
+    public static void main(String[] args) {
+        Television myTV = new Television();
+        myTV.setChannel(1);
+
+        for (int day = 1; day <= 10; day++) {
+            System.out.println("Woke up, day " + day);
+
+            boolean tired = false;
+
+            if (!myTV.isOn())
+                myTV.pressOnOff();
+
+            while (!tired) {
+                System.out.println("Watching channel " + myTV.getChannel());
+                myTV.setChannel(myTV.getChannel() + 1);
+                if (myTV.getChannel() % 4 == 0)
+                    tired = true;
+            }
+
+            myTV.pressOnOff();
+
+            System.out.println("Falling asleep");
         }
     }
-
 }
