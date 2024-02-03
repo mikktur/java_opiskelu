@@ -8,12 +8,16 @@ public class Car extends AbstractVehicle implements Vehicle {
         this.color = "red";
     }
 
+
     @Override
     public String getInfo() {
-        return super.getInfo() +"Color: " + this.color;
+        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nColor: " + color;
     }
 
-
+    @Override
+    public void charge() {
+        System.out.println("No possible to charge");
+    }
 }
 
 

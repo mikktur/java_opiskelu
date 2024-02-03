@@ -11,9 +11,13 @@ public class Motorcycle extends AbstractVehicle implements Vehicle{
 
     @Override
     public String getInfo() {
-        return super.getInfo() +"Color: " + this.color;
+        return "Type: " + getType() + "\nFuel: " + getFuel();
     }
 
+    @Override
+    public void charge() {
+        System.out.println("No possible to charge");
+    }
 }
 
 

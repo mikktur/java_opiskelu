@@ -19,13 +19,15 @@ public abstract class AbstractVehicle implements Vehicle,ElectricVehicle {
     public String getFuel() {
         return fuel;
     }
-    public String getInfo() {
-        return "Type: " + getType() + "\nFuel: " + getFuel() + "\n";
-    }
+    public abstract String getInfo(); /*Aluksi pistin että subclassit otti superilla tästä tyypin ja fuelin, mutta aloin
+                                        miettimään että se vähän undermainaisi interfacen hyötyjä. En oo ihan varma käsitinkö oikein
+                                        mutta interfacen takia jokaisella vehiclella pitää olla omanlaisensa getinfo ja jos tämä ei olisi
+                                        abstracti niin se mahdollistaisi virheiden sattumista. Tietenkin tässä tapauksessa se olisi
+                                        näyttänyt ajouneuvon tyypin ja fueltyypin, joka olisi ollut ihan okei, mutta olisi silti jäänyt
+                                        tietoja saamatta.*/
+
     public void additionalMethod(){
         System.out.println(this.additionalAttr);
     }
-    public void charge(){
-        System.out.println("No possible to charge");
-    }
+    public abstract void charge();
 }

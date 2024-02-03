@@ -11,9 +11,11 @@ public class Bus extends AbstractVehicle implements Vehicle {
 
     @Override
     public String getInfo() {
-        return super.getInfo() +"Capacity: " + this.capacity;
+        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nCapacity: " + capacity + " passengers";
     }
 
-
-
+    @Override
+    public void charge() {
+        System.out.println("No possible to charge");
+    }
 }

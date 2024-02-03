@@ -12,7 +12,7 @@ public class ElectricCar extends AbstractVehicle {
 
     @Override
     public String getInfo() {
-        return super.getInfo() +"Charge: " + this.currCharge;
+        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nCharge: " + this.currCharge;
 
     }
 

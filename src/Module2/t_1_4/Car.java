@@ -52,7 +52,7 @@ public class Car {
             speed = 0;
     }
 
-    void decelerate(int amount) {
+    public void decelerate(int amount) {
         if (gasolineLevel > 0) {
             if (amount > 0)
                 speed = Math.max(0, speed - amount);
@@ -60,19 +60,19 @@ public class Car {
             speed = 0;
     }
 
-    float getSpeed() {
+    public float getSpeed() {
         return speed;
     }
 
-    String getTypeName() {
+    public String getTypeName() {
         return typeName;
     }
 
-    void fillTank() {
+    public void fillTank() {
         gasolineLevel = 100;
     }
 
-    float getGasolineLevel() {
+    public float getGasolineLevel() {
         return gasolineLevel;
     }
 
