@@ -4,12 +4,17 @@ public abstract class AbstractVehicle implements Vehicle,ElectricVehicle {
     private String type;
     private String fuel;
     private String additionalAttr;
+    private long fuelEff;
 
     public AbstractVehicle(String type, String fuel) {
         this.type = type;
         this.fuel = fuel;
         this.additionalAttr = "Additional attribute";
+        this.fuelEff = calculateFuelEfficiency();
 
+    }
+    public long getFuelefficiency(){
+        return this.fuelEff;
     }
 
     public String getType() {

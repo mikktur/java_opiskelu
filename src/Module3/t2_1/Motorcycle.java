@@ -11,7 +11,12 @@ public class Motorcycle extends AbstractVehicle implements Vehicle{
 
     @Override
     public String getInfo() {
-        return "Type: " + getType() + "\nFuel: " + getFuel();
+        return "Type: " + getType() + "\nFuel: " + getFuel()+ "\nFuel efficiency : " + getFuelefficiency() +" Km per liter";
+    }
+
+    @Override
+    public long calculateFuelEfficiency() {
+        return 5;
     }
 
     @Override

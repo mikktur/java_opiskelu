@@ -12,6 +12,7 @@ public class VehicleDemo {
         for(Vehicle ajoneuvo:ajoneuvot){
             ajoneuvo.start();
             System.out.println(ajoneuvo.getInfo());
+
         }
         for(Vehicle ajoneuvo:ajoneuvot){
             ajoneuvo.stop();

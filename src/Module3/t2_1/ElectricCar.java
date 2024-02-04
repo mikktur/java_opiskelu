@@ -12,8 +12,13 @@ public class ElectricCar extends AbstractVehicle {
 
     @Override
     public String getInfo() {
-        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nCharge: " + this.currCharge;
+        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nCharge: " + this.currCharge + "\nFuel efficiency : " + getFuelefficiency() +" kWh per liter";
 
+    }
+
+    @Override
+    public long calculateFuelEfficiency() {
+        return 25;
     }
 
     @Override
