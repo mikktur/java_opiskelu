@@ -10,8 +10,8 @@ public class Bus extends AbstractVehicle implements Vehicle {
 
 
     @Override
-    public String getInfo() {
-        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nCapacity: " + capacity + " passengers\nFuel efficiency : " + getFuelefficiency() +" Km per liter";
+    public String unitSpecificInfo() {
+        return "Capacity: " + capacity + " passengers";
     }
 
     @Override
@@ -19,9 +19,6 @@ public class Bus extends AbstractVehicle implements Vehicle {
         return 20;
     }
 
-    @Override
-    public void charge() {
-        System.out.println("No possible to charge");
-    }
+
 
 }

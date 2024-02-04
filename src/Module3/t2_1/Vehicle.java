@@ -1,16 +1,10 @@
 package Module3.t2_1;
 
 public interface Vehicle {
-    default void start(){
-        System.out.println(getType() + " is starting...");
-    };
-    default void stop(){
-        System.out.println(getType() + " is stopping...");
-    };
+    void start();
+    void stop();
     String getInfo();
-    String getType();
-    String getFuel();
+    //oisin ihan hyvin voinu lisätä pelkästään kanssa, getFuelType(),getType() jne...
+    String unitSpecificInfo();
     long calculateFuelEfficiency();
-    long getFuelefficiency();
-
 }

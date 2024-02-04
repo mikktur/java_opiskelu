@@ -10,8 +10,8 @@ public class Car extends AbstractVehicle implements Vehicle {
 
 
     @Override
-    public String getInfo() {
-        return "Type: " + getType() + "\nFuel: " + getFuel() + "\nColor: " + color +"\nFuel efficiency : " + getFuelefficiency() +" Km per liter";
+    public String unitSpecificInfo() {
+        return "Color: " + color;
     }
 
     @Override
@@ -19,10 +19,7 @@ public class Car extends AbstractVehicle implements Vehicle {
         return 10;
     }
 
-    @Override
-    public void charge() {
-        System.out.println("No possible to charge");
-    }
+
 }
 
 

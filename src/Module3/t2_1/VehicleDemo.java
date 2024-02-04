@@ -17,11 +17,14 @@ public class VehicleDemo {
         for(Vehicle ajoneuvo:ajoneuvot){
             ajoneuvo.stop();
         }
-        ajoneuvot[0].additionalMethod();
+
         ajoneuvot[3].charge();
         System.out.println(ajoneuvot[3].getInfo());
         ajoneuvot[0].charge();
-
+        Vehicle ajoneuvo = new Car();
+        ajoneuvo.start();
+        ajoneuvo.stop();
+        System.out.println(ajoneuvo.getInfo());
 
     }
 }

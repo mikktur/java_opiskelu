@@ -1,38 +1,43 @@
 package Module3.t2_1;
 
-public abstract class AbstractVehicle implements Vehicle,ElectricVehicle {
+public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     private String type;
     private String fuel;
-    private String additionalAttr;
     private long fuelEff;
 
     public AbstractVehicle(String type, String fuel) {
         this.type = type;
         this.fuel = fuel;
-        this.additionalAttr = "Additional attribute";
         this.fuelEff = calculateFuelEfficiency();
 
     }
-    public long getFuelefficiency(){
-        return this.fuelEff;
+
+    public String getInfo() {
+        if (this.fuel.equals("Electric")) {
+            return "Type: " + this.type + "\nFuel: " + this.fuel + "\n" + unitSpecificInfo() + "\nFuel efficiency : "
+                    + this.fuelEff + " kWh per liter";
+        } else {
+            return "Type: " + this.type + "\nFuel: " + this.fuel + "\n" + unitSpecificInfo() + "\nFuel efficiency : "
+                    + this.fuelEff + " Km per liter";
+        }
     }
 
-    public String getType() {
-        return type;
+    public abstract String unitSpecificInfo();
+
+
+    public void charge() {
+        System.out.println("No possible to charge");
     }
 
-    public String getFuel() {
-        return fuel;
+    public void start() {
+        System.out.println(this.type + " is starting...");
     }
-    public abstract String getInfo(); /*Aluksi pistin että subclassit otti superilla tästä tyypin ja fuelin, mutta aloin
-                                        miettimään että se vähän undermainaisi interfacen hyötyjä. En oo ihan varma käsitinkö oikein
-                                        mutta interfacen takia jokaisella vehiclella pitää olla omanlaisensa getinfo ja jos tämä ei olisi
-                                        abstracti niin se mahdollistaisi virheiden sattumista. Tietenkin tässä tapauksessa se olisi
-                                        näyttänyt ajouneuvon tyypin ja fueltyypin, joka olisi ollut ihan okei, mutta olisi silti jäänyt
-                                        tietoja saamatta.*/
 
-    public void additionalMethod(){
-        System.out.println(this.additionalAttr);
+    ;
+
+    public void stop() {
+        System.out.println(this.type + " is stopping...");
     }
-    public abstract void charge();
+
+    public abstract long calculateFuelEfficiency();
 }
