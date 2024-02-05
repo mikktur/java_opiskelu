@@ -9,7 +9,7 @@ public class Temperature {
         URL myUrl;
         boolean header = true;
         double summa = 0;
-        int columnCount = 0;
+        int rowCount = 0;
         String[] columnNames;
 
         try {
@@ -46,7 +46,7 @@ public class Temperature {
                                 String value = columns[indexofcolumn].replaceAll(",", ".");
                                 System.out.println(value);
                                 summa += Double.parseDouble(value);
-                                columnCount++;
+                                rowCount++;
                                 } catch (NumberFormatException e) {
                                     System.out.println("non numeric value: " +e);
                             }
@@ -63,7 +63,7 @@ public class Temperature {
             System.err.println(e);
         }
 
-        System.out.println("Keskiarvo: " +summa / columnCount);
+        System.out.println("Keskiarvo: " +summa / rowCount);
     }
 
 }
