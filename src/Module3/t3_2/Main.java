@@ -1,8 +1,8 @@
-package Module3.t3_2.library;
+package Module3.t3_2;
 
-import Module3.t3_2.library.model.Book;
-import Module3.t3_2.library.model.LibraryMember;
-import Module3.t3_2.library.system.Library;
+import Module3.t3_2.model.Book;
+import Module3.t3_2.model.LibraryMember;
+import Module3.t3_2.system.Library;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +23,8 @@ public class Main {
         library.addBook(book3);
         library.addMember(member1);
         library.addMember(member2);
-
+        library.reserveBook(member1,book3);
+        library.displayReservedBooks(member1);
         // Test borrowing books
         library.borrowBook(book1, member1);
         library.borrowBook(book2, member2);
@@ -41,10 +42,6 @@ public class Main {
         // Check if books are returned to the library
         System.out.println("Books in the library after return: " + library.getBooks());
 
-        // Test book reservation
-        library.reserveBook(member1, book3);
-        library.reserveBook(member2, book3);
-        library.reserveBook(member1, book3);  // Attempting to reserve the same book again
 
         // Check if book is reserved and displayed
         System.out.println("Is book3 reserved? " + book3.isReserved());
@@ -56,8 +53,7 @@ public class Main {
         library.cancelReservation(member2, book1);  // Canceling reservation for a non-reserved book
 
         // Check if reservation is canceled
-        System.out.println("Is book3 reserved after cancellation? " + book3.isReserved());
+        System.out.println("Is book3 reserved? " + book3.isReserved());
         library.displayReservedBooks(member1);
-        library.displayReservedBooks(member2);
     }
 }

@@ -1,4 +1,4 @@
-package Module3.t3_2.library.model;
+package Module3.t3_2.model;
 
 public class Book {
     String title;

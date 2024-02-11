@@ -1,4 +1,4 @@
-package Module3.t3_2.library.model;
+package Module3.t3_2.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class LibraryMember {
         if (!borrowedBooks.isEmpty()) {
             return this.borrowedBooks;
         } else{
-            System.out.println("Member havent borrowed any books.");
+            System.out.println(name+" havent borrowed any books.");
             return this.borrowedBooks;
         }
 
@@ -50,7 +50,7 @@ public class LibraryMember {
         if (!borrowedBooks.isEmpty()) {
             borrowedBooks.remove(book);
         } else{
-            System.out.println("Member havent borrowed any books.");
+            System.out.println("Member does not have any borrowed books.");
         }
 
     }

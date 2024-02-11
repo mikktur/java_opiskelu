@@ -1,8 +1,7 @@
-package Module3.t3_2.library.system;
+package Module3.t3_2.system;
 
-import Module2.t_3_1.User;
-import Module3.t3_2.library.model.Book;
-import Module3.t3_2.library.model.LibraryMember;
+import Module3.t3_2.model.Book;
+import Module3.t3_2.model.LibraryMember;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +26,12 @@ public class Library {
     }
 
     public void borrowBook(Book book, LibraryMember user) {
-        books.remove(book);
-        user.borrowBook(book);
+        if (!book.isReserved()){
+            books.remove(book);
+            user.borrowBook(book);}
+        else{
+            System.out.println(book+" is currently reserved");
+        }
 
     }
 
