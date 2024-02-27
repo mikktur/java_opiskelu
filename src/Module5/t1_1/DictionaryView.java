@@ -70,9 +70,6 @@ public class DictionaryView extends Application {
     }
 
 
-    public void addWord(String word, String translation) {
-        controller.addWord(word, translation);
-    }
 
 
 }
