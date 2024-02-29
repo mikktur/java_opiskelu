@@ -1,0 +1,24 @@
+.root{
+    -fx-font-family: sans-serif;
+    -fx-font-size: 13px;
+}
+
+.label{
+    -fx-font-size: 15px;
+}
+.choice-box .label{
+    -fx-font-weight: normal;
+}
+.button{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.text-field{
+    -fx-font-size:15px;
+}
+.title{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+
