@@ -1,4 +1,4 @@
-package Module4.t1_2;
+package Module5.t1_2;
 
 public class Sum extends Thread {
     private int[] numbers;

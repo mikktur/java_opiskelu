@@ -1,6 +1,4 @@
-package Module4.t1_2;
-
-import Module4.t1_2.Sum;
+package Module5.t1_2;
 
 public class Split {
     static int N = 15;

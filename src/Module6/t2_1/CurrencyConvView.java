@@ -1,4 +1,4 @@
-package Module6;
+package Module6.t2_1;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -111,7 +111,7 @@ public class CurrencyConvView extends Application {
 
 
         Scene scene = new Scene(layout, 700, 270);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene.getStylesheets().add("Module6/style.css");
 
         primaryStage.setScene(scene);
         convert.requestFocus();

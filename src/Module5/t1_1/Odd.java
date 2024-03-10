@@ -1,4 +1,4 @@
-package Module4.t1_1;
+package Module5.t1_1;
 
 public class Odd extends Thread {
     private int start;

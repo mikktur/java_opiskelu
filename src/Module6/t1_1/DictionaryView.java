@@ -1,4 +1,4 @@
-package Module5.t1_1;
+package Module6.t1_1;
 
 import javafx.geometry.Pos;
 import javafx.scene.input.KeyCode;

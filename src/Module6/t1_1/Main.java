@@ -1,4 +1,4 @@
-package Module5.t1_1;
+package Module6.t1_1;
 
 public class Main {
 

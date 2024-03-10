@@ -1,4 +1,4 @@
-package Module6;
+package Module6.t2_1;
 
 
 public class Controller {
