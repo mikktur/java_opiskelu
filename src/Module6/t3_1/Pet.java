@@ -1,7 +1,7 @@
 package Module6.t3_1;
 
-import javafx.scene.image.Image;
 
+import javafx.scene.image.Image;
 
 
 public class Pet {
@@ -9,8 +9,8 @@ public class Pet {
     double y;
     double targetY;
     double targetX;
-    boolean mouseOn = false;
     private Image petImage;
+    private boolean targetReached = false;
 
 
     public Pet() {
@@ -22,25 +22,24 @@ public class Pet {
     }
 
     public void move() {
-        if (mouseOn) {
-            double dx = targetX - x;
-            double dy = targetY - y;
 
-            //lasketaan etäisyys koordinaattien välillä
-            double distance = Math.sqrt(dx * dx + dy * dy);
+        double dx = targetX - x;
+        double dy = targetY - y;
 
-
-            if (distance > 0) {
-                //normalisoidaan suuntavektorit, jotta vauhti ei ole riippuvainen etäisyydestä.
-                dx /= distance;
-                dy /= distance;
-            }
+        //lasketaan etäisyys koordinaattien välillä
+        double distance = Math.sqrt(dx * dx + dy * dy);
 
 
-            double speed = 2;
-            x += dx * speed;
-            y += dy * speed;
-        }
+        if (distance > 1) {
+            //normalisoidaan suuntavektorit, jotta vauhti ei ole riippuvainen etäisyydestä.
+            dx /= distance;
+            dy /= distance;
+        } else targetReached();
+
+
+        double speed = 2;
+        x += dx * speed;
+        y += dy * speed;
 
 
     }
@@ -58,16 +57,21 @@ public class Pet {
         return this.petImage;
     }
 
-    public void mouseUpdate() {
-        mouseOn = !mouseOn;
-    }
 
     public void setTargetY(double y) {
+        targetReached = false;
         this.targetY = y;
     }
 
     public void setTargetX(double x) {
+        targetReached = false;
         this.targetX = x;
+    }
+    public void targetReached(){
+       targetReached = true;
+    }
+    public boolean getTargetStatus(){
+        return this.targetReached;
     }
 }
 

@@ -16,9 +16,7 @@ public class Controller {
     public Image getPetImage(){
         return pet.getPetImage();
     }
-    public void setMouseOn(){
-        pet.mouseUpdate();
-    }
+
     public void getMouseY(double y){
         pet.setTargetY(y);
     }
@@ -28,5 +26,9 @@ public class Controller {
     }
     public void getMouseX(double x){
         pet.setTargetX(x);
+    }
+    public boolean targetReached() {
+        if (pet.getTargetStatus()) return true;
+        else return false;
     }
 }

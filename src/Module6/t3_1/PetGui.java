@@ -26,23 +26,24 @@ public class PetGui extends Application {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                controller.move();
+                if (!controller.targetReached()) controller.move();
+
+
             }
         };
         StackPane root = new StackPane();
         root.getChildren().add(canvas);
         canvas.setOnMouseEntered(e ->{
             timer.start();
-            controller.setMouseOn();
         });
         canvas.setOnMouseExited(e->{
-            controller.setMouseOn();
             timer.stop();
         });
         canvas.setOnMouseMoved(e->{
             controller.getMouseY(e.getY());
             controller.getMouseX(e.getX());
         });
+
 
         Scene scene = new Scene(root, canvas.getWidth(), canvas.getHeight());
         primaryStage.setScene(scene);
@@ -54,13 +55,14 @@ public class PetGui extends Application {
 
     public void updateCanvas(double petX, double petY) {
         clearCanvas();
-
+        System.out.println("asdsadsad");
         Image petImage = controller.getPetImage();
         //lasketaan imagen keskipiste
         double imageX = petX - petImage.getWidth() / 2;
         double imageY = petY - petImage.getHeight() / 2;
 
         gc.drawImage(petImage, imageX, imageY);
+
 
     }
 
