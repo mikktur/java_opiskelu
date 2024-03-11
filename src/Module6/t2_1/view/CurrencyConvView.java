@@ -1,5 +1,7 @@
-package Module6.t2_1;
+package Module6.t2_1.view;
 
+import Module6.t2_1.controller.Controller;
+import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -8,6 +10,8 @@ import javafx.scene.control.*;
 import javafx.application.Application;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class CurrencyConvView extends Application {
     private Controller controller;
@@ -46,13 +50,11 @@ public class CurrencyConvView extends Application {
         convertedAmount.setPromptText("Converted amount");
 
         targetCurrency = new ChoiceBox<>();
-        targetCurrency.getItems().addAll("USD", "EUR", "GBP", "INR", "AUD", "CAD", "SGD", "CHF", "MYR", "JPY", "CNY");
-        targetCurrency.setValue("EUR");
+
 
         sourceCurrency = new ChoiceBox<>();
-        sourceCurrency.getItems().addAll("USD", "EUR", "GBP", "INR", "AUD", "CAD", "SGD", "CHF", "MYR", "JPY", "CNY");
-        sourceCurrency.setValue("EUR");
 
+        controller.setChoiceBoxItems();
 
         GridPane conversionText = new GridPane();
         conversionText.getStyleClass().add("conversionText");
@@ -118,7 +120,6 @@ public class CurrencyConvView extends Application {
         primaryStage.show();
 
 
-
     }
 
     @Override
@@ -131,4 +132,34 @@ public class CurrencyConvView extends Application {
     }
 
 
+    public String getSourceCurrency() {
+        return sourceCurrency.getValue();
+    }
+
+    public String getTargetCurrency() {
+        return targetCurrency.getValue();
+    }
+
+    public double getAmount() {
+        return Double.parseDouble(amount.getText());
+    }
+    public void showConvertedAmount(double convertedAmount) {
+        this.convertedAmount.setText(String.valueOf(convertedAmount));
+    }
+
+    public void setErrorMessage() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Database connection failed");
+        alert.setContentText("Please check your database connection");
+        alert.showAndWait();
+        Platform.exit();
+    }
+
+    public void setChoiceBoxItems(ArrayList<String> currencyAbbreviations) {
+        sourceCurrency.getItems().addAll(currencyAbbreviations);
+        targetCurrency.getItems().addAll(currencyAbbreviations);
+        targetCurrency.setValue("USD");
+        sourceCurrency.setValue("USD");
+    }
 }

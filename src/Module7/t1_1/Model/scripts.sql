@@ -12,19 +12,19 @@ CREATE table currencies
 );
 INSERT INTO currencies (abbreviation, name, conversionrate)
 VALUES ('USD', 'US Dollar', 1.0),
-       ('EUR', 'Euro', 0.9),
-       ('GBP', 'British Pound', 0.8),
-       ('JPY', 'Japanese Yen', 110.0),
-       ('CNY', 'Chinese Yuan', 6.9),
-       ('RUB', 'Russian Ruble', 65.0),
-       ('INR', 'Indian Rupee', 70.0),
-       ('AUD', 'Australian Dollar', 1.4),
-       ('CAD', 'Canadian Dollar', 1.3),
-       ('SEK', 'Swedish Krona', 10.0),
-       ('NOK', 'Norwegian Krone', 10.0),
-       ('KRW', 'South Korean Won', 1200.0),
-       ('MXN', 'Mexican Peso', 20.0),
-       ('TRY', 'Turkish Lira', 5.5);
+       ('EUR', 'Euro', 0.92),
+       ('GBP', 'British Pound', 0.78),
+       ('JPY', 'Japanese Yen', 146.95),
+       ('CNY', 'Chinese Yuan', 7.18),
+       ('RUB', 'Russian Ruble', 90.69),
+       ('INR', 'Indian Rupee', 82.74),
+       ('AUD', 'Australian Dollar', 1.51),
+       ('CAD', 'Canadian Dollar', 1.35),
+       ('SEK', 'Swedish Krona', 10.24),
+       ('NOK', 'Norwegian Krone', 10.45),
+       ('KRW', 'South Korean Won', 1311.18),
+       ('MXN', 'Mexican Peso', 16.8),
+       ('TRY', 'Turkish Lira', 32);
 
 DROP
     USER IF EXISTS 'mikko'@'localhost';
