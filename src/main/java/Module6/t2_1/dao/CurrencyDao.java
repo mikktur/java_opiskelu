@@ -2,6 +2,7 @@ package Module6.t2_1.dao;
 
 import java.sql.*;
 import Module6.t2_1.entity.Currency;
+import Module6.t2_1.entity.Transaction;
 import jakarta.persistence.EntityManager;
 import Module6.t2_1.datasource.MariaDbConnection;
 import jakarta.persistence.TypedQuery;
@@ -37,4 +38,6 @@ public class CurrencyDao {
         em.getTransaction().commit();
 
     }
+
+
 }

@@ -215,6 +215,7 @@ public class CurrencyConvView extends Application {
                 return;
             }
             controller.setConvertedAmount(Double.parseDouble(amount.getText()), sourceCurrency.getValue(), targetCurrency.getValue());
+            controller.saveTransactionData(Double.parseDouble(amount.getText()), sourceCurrency.getValue(), targetCurrency.getValue());
 
         });
 

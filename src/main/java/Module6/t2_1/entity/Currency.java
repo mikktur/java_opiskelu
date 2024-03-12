@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @NamedQuery(name = "Currency.findAllAbbreviations", query = "SELECT c.abbreviation FROM Currency c")
 public class Currency {
     @Id
+    @Column(name="abbreviation")
     private String abbreviation;
     @Column(name="name")
     private String name;

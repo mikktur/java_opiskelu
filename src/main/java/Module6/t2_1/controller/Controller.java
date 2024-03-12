@@ -1,11 +1,12 @@
 package Module6.t2_1.controller;
 
 import Module6.t2_1.dao.CurrencyDao;
+import Module6.t2_1.dao.TransactionDao;
 import Module6.t2_1.entity.Currency;
+import Module6.t2_1.entity.Transaction;
 import Module6.t2_1.view.CurrencyConvView;
 
 import java.sql.SQLException;
-
 
 
 public class Controller {
@@ -28,13 +29,10 @@ public class Controller {
             view.setNoConErrorMessage();
             return;
         }
-        System.out.println("sourceRate: " + sourceRate);
-        System.out.println("targetRate: " + targetRate);
         double convertedAmount = amount / sourceRate * targetRate;
         convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
         view.setConvertedAmount(convertedAmount);
     }
-
 
 
     public void setChoiceBoxItems() {
@@ -52,14 +50,36 @@ public class Controller {
         Currency currency = new Currency(abbreviation, name, conversionToUSD);
         try {
             currencyDao.addCurrency(currency);
+
         } catch (SQLException e) {
             if (e.getSQLState().equals("duplicate")) {
                 view.setDuplicateErrorMessage();
-            } else{
+            } else {
                 view.setNoConErrorMessage();
             }
 
 
         }
     }
+
+    public void saveTransactionData(double amount, String sourceCurrency, String targetCurrency) {
+        TransactionDao transactionDao = new TransactionDao();
+        CurrencyDao currencyDao = new CurrencyDao();
+        Currency sourceCur = null;
+        Currency targetCur = null;
+        try {
+            sourceCur = currencyDao.findByAbbreviation(sourceCurrency);
+            targetCur = currencyDao.findByAbbreviation(targetCurrency);
+        } catch (SQLException e) {
+            view.setNoConErrorMessage();
+            return;
+        }
+        Transaction transaction = new Transaction(amount, sourceCur, targetCur);
+        try {
+            transactionDao.saveTransaction(transaction);
+        } catch (SQLException e) {
+            view.setNoConErrorMessage();
+        }
+    }
+
 }
